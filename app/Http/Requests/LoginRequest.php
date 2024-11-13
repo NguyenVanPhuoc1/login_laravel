@@ -27,7 +27,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => 'required|string|email',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string',
         ];
     }
     public function messages()
@@ -36,7 +36,6 @@ class LoginRequest extends FormRequest
             'email.required' => 'Email là bắt buộc.',
             'email.email' => 'Email phải là một địa chỉ email hợp lệ.',
             'password.required' => 'Mật khẩu là bắt buộc.',
-            'password.min' => 'Mật khẩu phải có ít nhất 6 kí tự.',
         ];
     }
     public function authenticate(): void
